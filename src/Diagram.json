@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "author": "Gustavo Dantas",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "board-esp32-devkit-c-v4", "id": "esp", "top": 0, "left": 0, "attrs": {} },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn1",
+      "top": 150.2,
+      "left": 124.8,
+      "attrs": { "color": "red", "xray": "1" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": -22.8,
+      "left": 138.2,
+      "attrs": { "color": "blue" }
+    }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "btn1:1.l", "esp:2", "green", [ "h-9.6", "v-9.6" ] ],
+    [ "btn1:2.r", "esp:GND.2", "green", [ "h29", "v0.2" ] ],
+    [ "led1:C", "esp:GND.3", "green", [ "v67.2", "h0.4" ] ],
+    [ "led1:A", "esp:4", "green", [ "v124.8" ] ]
+  ],
+  "dependencies": {}
+}
